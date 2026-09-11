@@ -9,13 +9,13 @@
 <body>
     <h1>Cadastro de Usuário</h1>
     <div class="entrada">
-        <form action="get">
+        <form action="processar.php" method="POST">
             <p>Nome:</p>
-            <input type="text" class="campotexto" placeholder="Digite seu nome...">
+            <input type="text" name="nome" class="campotexto" placeholder="Digite seu nome...">
             <p>Email:</p>
-            <input type="text" class="campotexto" placeholder="Digite seu Email...">
+            <input type="text" name="email" class="campotexto" placeholder="Digite seu Email...">
             <p>Telefone:</p>
-            <input type="text" class="campotexto" placeholder="Digite seu Telefone...">
+            <input type="text" name="telefone" class="campotexto" placeholder="Digite seu Telefone...">
             <button id="botaoCadastro" class="bot">Cadastrar</button>
         </form>
     </div>
