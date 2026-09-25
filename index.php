@@ -52,6 +52,13 @@
     echo "Nome: " . $nome . "<br>";
     echo "Email: " . $email . "<br>";
     echo "Telefone: " . $telefone . "<br>";
+
+    echo "<script>
+    
+    alert('Cadastro realizado com sucesso!');
+    window.location.href = 'index.php';
+
+    </script>";
         
     }
 
