@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-
-
-
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
@@ -13,7 +10,7 @@
     <h1>Cadastro de Usuário</h1>
     <div class="entrada">
         <!--formulario para entrada de dados-->
-        <form method="POST">
+        <form action="processar.php" method="POST">
             <!--nome-->
             <label for="nome">Nome:</label>
             <input type="text" name="nome" id="nome" class="campotexto" placeholder="Digite seu nome...">
@@ -21,31 +18,12 @@
             <!--email-->
             <label for="email">Email:</label>
             <input type="text" name="email" id="email" class="campotexto" placeholder="Digite seu Email...">
-
+            
             <!--telefone-->
             <label for="telefone">Telefone:</label>
             <input type="text" name="telefone" id="telefone" class="campotexto" placeholder="Digite seu Telefone...">
             <button id="botaoCadastro" class="bot">Cadastrar</button>
         </form>
-
-    <?php
-    //verifica se o formulario foi enviado
-    if ($_SERVER["REQUEST_METHOD"] == "POST"){
-
-    //Recebe os dados do formulario
-    $nome = $_POST["nome"];
-    $email = $_POST["email"];
-    $telefone = $_POST["telefone"];
-
-    //mostra os dados recebidos
-    echo "Nome: " . $nome . "<br>";
-    echo "Email: " . $email . "<br>";
-    echo "Telefone: " . $telefone . "<br>";
-
-    }
-
-    ?>
-
     </div>
 </body>
 </html>
