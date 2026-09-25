@@ -1,9 +1,15 @@
-FROM php:8.1-apache
+FROM php:8.2-cli
 
-WORKDIR /var/www/html
+WORKDIR /app
 
-COPY . /var/www/html
+RUN apt-get update && apt-get install -y \
+ libpq-dev \
+ && docker-php-ext-install pgsql pdo_pgsql \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
 
-EXPOSE 80
+COPY . /app
 
-CMD ["apache2-foreground"]
+EXPOSE 10000
+
+CMD ["sh", "-c", "php -S 0.0.0.0:${PORT:-10000} -t /app"]
