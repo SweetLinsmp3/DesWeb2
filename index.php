@@ -37,12 +37,24 @@
     $email = $_POST["email"];
     $telefone = $_POST["telefone"];
 
+     // Obtém a conexão configurada no Render
+    $databaseUrl = getenv("DATABASE_URL");
+    // Conecta ao PostgreSQL
+    $conexao = pg_connect($databaseUrl);
+    // Salva o e-mail no banco
+    pg_query_params(
+     $conexao,
+     "INSERT INTO usuarios (nome,email,telefone) VALUES ($1, $2, $3)",
+     array($nome,$email,$telefone)
+    );
+
     //mostra os dados recebidos
     echo "Nome: " . $nome . "<br>";
     echo "Email: " . $email . "<br>";
     echo "Telefone: " . $telefone . "<br>";
-
+        
     }
+
 
     ?>
 
